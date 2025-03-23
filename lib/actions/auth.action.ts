@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use server'
 
 import { auth, db } from "@/firebase/admin";
@@ -75,7 +76,7 @@ export async function signIn(params: SignInParams) {
     } catch (error: any) {
         return {
             success: false,
-            message: "Error signing in. Please try again."
+            message: "Error signing in. Please try again., error: " + error
         }
     }
 }
